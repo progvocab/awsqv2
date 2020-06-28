@@ -1,4 +1,27 @@
-document.onkeypress = function() {myFunction(event)};
+var index = 0;
+var emoarr=["&#128528;","&#128578;","&#127773;","&#128512;","&#128515","&#128516;","&#128513;","&#128522;","&#128519;","&#128526;","&#129321;","&#128571;"];
+function afterLoad(){
+    document.onkeypress = function() {myFunction(event)};
+    document.getElementById('bulb').style.display = "none";
+    document.getElementById('11').style= 'display:none';
+                    document.getElementById('22').style= 'display:none';
+                    document.getElementById('33').style= 'display:none';
+                    document.getElementById('44').style= 'display:none';
+                    score = 0;
+            document.getElementById("title").innerHTML=title;
+            var emoarr=["&#128528;","&#128578;","&#127773;","&#128512;","&#128515","&#128516;","&#128513;","&#128522;","&#128519;","&#128526;","&#129321;","&#128571;"];
+            document.getElementById('sc').innerHTML = score;
+            
+            var index = 0;
+            document.getElementById('q1').innerHTML = req[index].question;
+            document.getElementById('a').innerHTML = req[index].optiona;
+            document.getElementById('b').innerHTML = req[index].optionb;
+            document.getElementById('c').innerHTML = req[index].optionc;
+            document.getElementById('d').innerHTML = req[index].optiond;
+            document.getElementById('e').style.display = "none";
+            document.getElementById('f').style.display = "none";
+}
+$('#main').load(  'blog.html'  ,  afterLoad );
 
 function changeBgToGrey(elemId){
     document.getElementById( elemId).parentElement.parentElement.parentElement.parentElement.style.backgroundColor= '#f3f3f3';
@@ -6,11 +29,7 @@ function changeBgToGrey(elemId){
 function changeBgToWhite(elemId){
     document.getElementById( elemId).parentElement.parentElement.parentElement.parentElement.style.backgroundColor= '#ffffff';
 }
-document.getElementById('bulb').style.display = "none";
-document.getElementById('11').style= 'display:none';
-                document.getElementById('22').style= 'display:none';
-                document.getElementById('33').style= 'display:none';
-                document.getElementById('44').style= 'display:none';
+
 //$('#1').html( $('#circle').html());
 
 function myFunction(event) {
@@ -41,19 +60,7 @@ function myFunction(event) {
 
 
 
- score = 0;
-            document.getElementById("title").innerHTML=title;
-            var emoarr=["&#128528;","&#128578;","&#127773;","&#128512;","&#128515","&#128516;","&#128513;","&#128522;","&#128519;","&#128526;","&#129321;","&#128571;"];
-            document.getElementById('sc').innerHTML = score;
-            
-            var index = 0;
-            document.getElementById('q1').innerHTML = req[index].question;
-            document.getElementById('a').innerHTML = req[index].optiona;
-            document.getElementById('b').innerHTML = req[index].optionb;
-            document.getElementById('c').innerHTML = req[index].optionc;
-            document.getElementById('d').innerHTML = req[index].optiond;
-            document.getElementById('e').style.display = "none";
-            document.getElementById('f').style.display = "none";
+ 
             function correct(val) {
                 if (req[index].answer == val) score++;
 				score1 = score ;

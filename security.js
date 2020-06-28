@@ -293,7 +293,7 @@ var req = [
         'question': ' Which of the following Returns a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to',
         'optiona': '  aws sts assume-role --profile sam --role-session-name myrs --role-arn arn:aws:iam::12345:role/MyRole ',
         'optionb': '  aws sts assume-role-with-saml  --profile sam --role-session-name myrs --role-arn arn:aws:iam::12345:role/MyRole  --saml-assertion VERYLONGENCRYPEDTEXT ',
-        'optionc': '  aws sts assume-role-with-web-identity   --profile sam --role-session-name myrs --role-arn arn:aws:iam::12345:role/MyRole  --web-identity-token SIMILARVERYLONGENCRYPEDTEXT  ',
+        'optionc': '  aws sts assume-role-with-web-identity   --profile sam --role-session-name myrs --role-arn arn:aws:iam::12345:role/MyRole  --web-identity-token BearerTokenOAuth  ',
         'optiond': ' All of the Above ',
         'answer': 'd',
         'info': ' '
