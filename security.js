@@ -1,5 +1,92 @@
 var req = [
-    {
+  {
+      'question': 'What is the sign in url for IAM user    '
+      , 'optiona': 'https://aws_account_id.signin.aws.amazon.com/console',
+      'optionb': ' https://alias.signin.aws.amazon.com/console ',
+      'optionc': ' Both',
+      'optiond': 'None',
+      'answer': 'c',
+      'info': '  '
+
+  },{
+      'question': 'When you use an endpoint with no Region, AWS routes the   request to   '
+      , 'optiona': 'US East (Ohio) (us-east-2)',
+      'optionb': ' US East (N. Virginia) (us-east-1) ',
+      'optionc': ' Both',
+      'optiond': 'None',
+      'answer': 'b',
+      'info': ' <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Read more </a> '
+
+  },{
+      'question': 'AWS services offer FIPS endpoints in selected Regions , how do you use it    '
+      , 'optiona': 'vpn',
+      'optionb': ' endpoint-url parameter ',
+      'optionc': ' Both',
+      'optiond': 'None',
+      'answer': 'b',
+      'info': ' aws kms create-key --endpoint-url https://kms-fips.us-west-2.amazonaws.com <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Read more </a> '
+
+  },  {
+      'question': 'Secrets Manager encrypts the protected text of a secret by using   '
+      , 'optiona': 'STS',
+      'optionb': ' KMS ',
+      'optionc': ' Both',
+      'optiond': 'None',
+      'answer': 'b',
+      'info': '  '
+
+  },  {
+        'question': 'Which credential type is used for AWS root account or IAM user account login to the AWS Management Console  '
+        , 'optiona': 'X.509 Certificates',
+        'optionb': ' Access Keys ',
+        'optionc': ' Multi-Factor Authentication (MFA)',
+        'optiond': 'Key Pairs',
+        'answer': 'c',
+        'info': ` A six-digit single-use code that is required in addition to your password to log in to your AWS Account or IAM user account.  <a href='https://d1.awsstatic.com/whitepapers/aws-security-whitepaper.pdf'>Know more </a>`
+    },  {
+          'question': 'Which credential type is used for Digitally signed requests to AWS APIs (using the AWS SDK, CLI, or REST/Query APIs) '
+          , 'optiona': 'X.509 Certificates',
+          'optionb': ' Access Keys ',
+          'optionc': ' Multi-Factor Authentication (MFA)',
+          'optiond': 'Key Pairs',
+          'answer': 'b',
+          'info': `  Includes an access key ID and a secret access key. You use access keys to digitally sign programmatic requests that you make to AWS. <a href='https://d1.awsstatic.com/whitepapers/aws-security-whitepaper.pdf'>Know more </a>`
+      },  {
+            'question': 'Which credential type is used for Digitally signed SOAP requests to AWS APIs SSL server certificates for HTTPS '
+            , 'optiona': 'X.509 Certificates',
+            'optionb': ' Access Keys ',
+            'optionc': ' Multi-Factor Authentication (MFA)',
+            'optiond': 'Key Pairs',
+            'answer': 'a',
+            'info': `  X.509 certificates are only used to sign SOAP-based requests (currently used only with Amazon S3) <a href='https://d1.awsstatic.com/whitepapers/aws-security-whitepaper.pdf'>Know more </a>`
+        },{
+      'question': 'How to retrieve the encrypted secret value of a secret  '
+      , 'optiona': 'aws secretsmanager describe-secret --secret-id MyTestDatabaseSecret',
+      'optionb': ' aws secretsmanager get-secret-value --secret-id MyTestDatabaseSecret --version-stage AWSPREVIOUS ',
+      'optionc': ' Both',
+      'optiond': 'None',
+      'answer': 'b',
+      'info': '  '
+
+  },{
+      'question': 'STS global service endpoint  '
+      , 'optiona': 'https://sts.aws.com',
+      'optionb': ' https://sts.amazon.com ',
+      'optionc': ' https://sts.amazonaws.com',
+      'optiond': 'None',
+      'answer': 'c',
+      'info': '  '
+
+  },{
+      'question': 'Which Action returns a set of temporary credentials for an AWS account or IAM user  '
+      , 'optiona': 'GetCallerIdentity',
+      'optionb': ' GetFederationToken',
+      'optionc': ' GetSessionToken',
+      'optiond': 'None',
+      'answer': 'c',
+      'info': '  '
+
+  },{
         'question': 'Which service is enables you to request temporary, limited-privilege credentials for <b>AWS</b> Identity and Access Management (IAM) users or for users that you authenticate (federated users) '
         , 'optiona': 'Secrets Manager',
         'optionb': ' KMS Key Management Service ',
@@ -8,7 +95,52 @@ var req = [
         'answer': 'c',
         'info': '  '
 
-    },  
+    },{
+          'question': 'The temporary security credentials created by GetSessionToken can be used to make API calls to any AWS service except '
+          , 'optiona': 'AssumeRole ',
+          'optionb': ' GetCallerIdentity ',
+          'optionc': ' Both ',
+          'optiond': 'None',
+          'answer': 'c',
+          'info': '  '
+
+      },{
+            'question': 'Which Action you use  if you want to use MFA to protect programmatic calls to specific AWS API operations like Amazon EC2 StopInstances '
+            , 'optiona': 'AssumeRole ',
+            'optionb': ' GetCallerIdentity ',
+            'optionc': ' GetSessionToken ',
+            'optiond': 'GetFederationToken',
+            'answer': 'c',
+            'info': '  '
+
+        },{
+              'question': 'Which Action Returns a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to '
+              , 'optiona': 'AssumeRole ',
+              'optionb': ' GetCallerIdentity ',
+              'optionc': ' GetSessionToken ',
+              'optiond': 'GetFederationToken',
+              'answer': 'a',
+              'info': ' <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html> Read More </a>" '
+
+          },{
+              'question': 'The temporary security token that was obtained through a call to AWS Security Token Service (AWS STS) is passed in which parameter '
+              , 'optiona': 'X-Amz-Credential ',
+              'optionb': ' X-Amz-Security-Token ',
+              'optionc': ' X-Amz-Signature ',
+              'optiond': 'X-Amz-SignedHeaders',
+              'answer': 'b',
+              'info': '  '
+
+          },{
+                'question': 'In the response of GetSessionToken , which attribute in credentials is used to sign request  '
+                , 'optiona': 'AccessKeyId ',
+                'optionb': ' SecretAccessKey ',
+                'optionc': ' SessionToken ',
+                'optiond': 'None',
+                'answer': 'b',
+                'info': '  '
+
+            },
     {
         'question': 'Which Service is used to Run automated security checks across your AWS environment',
         'optiona': 'Secrets Manager',
@@ -26,8 +158,7 @@ var req = [
         'optiond': 'AWS Security Hub',
         'answer': 'b',
         'info': '  '
-    },
-    {
+    },{
         'question': `  How can you easily and securely add sign-up and sign-in functionality to your mobile and web apps `,
         'optiona': 'Secrets Manager',
         'optionb': ' Resource Access Manager ',
@@ -35,8 +166,16 @@ var req = [
         'optiond': 'AWS Security Hub',
         'answer': 'c',
         'info': ' User pools are user directories that provide sign-up and sign-in options for your app users. '
-    }
-    ,
+    } ,
+    {
+        'question': ` In Cognito Which of the following is an entity within a user pool that has permission to call unauthenticated APIs (APIs that do not have an authenticated user), such as APIs to register, sign in, and handle forgotten passwords  `,
+        'optiona': ' Trigger ',
+        'optionb': ' Resource server ',
+        'optionc': ' App Client  ',
+        'optiond': ' None ',
+        'answer': 'c',
+        'info': ' <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html"> Read More </a> '
+    } ,
     {
         'question': ' How your app can get temporary credentials to access AWS services for anonymous guest users or for users who have signed in ',
         'optiona': 'Secrets Manager',
@@ -54,6 +193,28 @@ var req = [
         'optiond': ' None ',
         'answer': 'c',
         'info': ' AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features'
+    },
+    {
+        'question': ` The following request is ideal for <p style='white-space:pre'>
+var params = {
+  Name: 'STRING_VALUE', /* required */
+  DurationSeconds: 'NUMBER_VALUE',
+  Policy: 'STRING_VALUE',
+  PolicyArns: [  {
+      arn: 'STRING_VALUE'
+    } ],
+  Tags: [   {
+      Key: 'STRING_VALUE', /* required */
+      Value: 'STRING_VALUE' /* required */
+    }  ]
+};
+</p> `,
+        'optiona': 'sts.getSessionToken(params, function(err, data)  ',
+        'optionb': ' sts.getFederationToken(params, function(err, data) ',
+        'optionc': ' Both ',
+        'optiond': ' None ',
+        'answer': 'b',
+        'info': ' To get temporary credentials for a role by using GetFederationToken <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/STS.html#getSessionToken-property">Check </a>'
     },
     {
         'question': 'Which Service  helps protect your web applications or APIs against common web exploits that may affect availability, compromise security, or consume excessive resources ',
@@ -100,6 +261,52 @@ var req = [
         'answer': 'c',
         'info': ' '
     },
+    {
+        'question': ' ___ contains claims about contains claims about the identity of the authenticated user such as name, email, and phone_number ',
+        'optiona': 'Id token',
+        'optionb': ' access token ',
+        'optionc': 'Both ',
+        'optiond': 'None',
+        'answer': 'a',
+        'info': '<a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html"> Know more </a> '
+    },
+    {
+        'question': ' ___ contains scopes and groups and is used to grant access to authorized resources. ',
+        'optiona': 'Id token',
+        'optionb': ' access token ',
+        'optionc': 'Both ',
+        'optiond': 'None',
+        'answer': 'b',
+        'info': '<a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html"> Know more </a> '
+    },
+    {
+        'question': '________ are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce',
+        'optiona': 'IAM SAML Identity Providers',
+        'optionb': ' OpenID Connect (OIDC) Identity Providers ',
+        'optionc': 'Both ',
+        'optiond': 'None',
+        'answer': 'b',
+        'info': '<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html"> Know more </a> '
+    },
+    {
+        'question': 'After you create a user pool, you can create an  to use the built-in webpages for signing up and signing in your users',
+        'optiona': 'Domain',
+        'optionb': ' app client ',
+        'optionc': 'Both ',
+        'optiond': 'None',
+        'answer': 'b',
+        'info': '<a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"> Know more </a> '
+    },
+    {
+        'question': 'You can use an ______ and choose an available domain prefix, or you can use your own web address as a custom domain.',
+        'optiona': ' Amazon Cognito hosted domain',
+        'optionb': ' app client ',
+        'optionc': 'Both ',
+        'optiond': 'None',
+        'answer': 'a',
+        'info': '<a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html"> Know more </a> '
+    },
+
     {
         'question': 'Which service  is a continuous security monitoring and threat detection service that incorporates threat intelligence, anomaly detection, and machine learning to help protect your AWS resources, including your AWS accounts',
         'optiona': 'Secrets Manager',
@@ -216,6 +423,15 @@ var req = [
         'optiond': ' Principal ',
         'answer': 'd',
         'info': ' '
+    }  ,
+    {
+        'question': ' Trust policies define which entities can assume the role . Where is the trust policy specified while creating a role . ',
+        'optiona': ' Both ',
+        'optionb': ' ManagedPolicyArns  ',
+        'optionc': '  AssumeRolePolicyDocument  ',
+        'optiond': ' None ',
+        'answer': 'c',
+        'info': ' <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html"> Read more </a>'
     }  ,
     {
         'question': 'for a policy Read / Write object is speciafied in  ',
@@ -380,7 +596,68 @@ var req = [
         'optiond': ' GenerateDataKeyPairWithoutPlaintext ',
         'answer': 'a',
         'info': '  '
-    }
+    },
+	{
+        'question': ' Enabling Security Hub grants it permissions to import findings from:',
+        'optiona': '  Amazon GuardDuty ',
+        'optionb': '  Amazon Inspector ',
+        'optionc': '  Amazon Macie  ',
+        'optiond': ' All ',
+        'answer': 'd',
+        'info': 'also from  AWS IAM Access Analyzer AWS Firewall Manager '
+    },
+	{
+        'question': '  Automatically discover sensitive data across all of your organization\'s S3 buckets',
+        'optiona': '  Amazon GuardDuty ',
+        'optionb': '  Amazon Inspector ',
+        'optionc': '  Amazon Macie  ',
+        'optiond': ' All ',
+        'answer': 'c',
+        'info': 'Macie continually evaluates your Amazon S3 environment and provides an S3 resource summary across all of your accounts '
+    },
+	{
+        'question': ' _______  captures all API calls for Macie as events ',
+        'optiona': '  CloudTrail ',
+        'optionb': '  CloudWatch ',
+        'optionc': '  xray  ',
+        'optiond': ' All ',
+        'answer': 'a',
+        'info': ' If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon Simple Storage Service (Amazon S3) bucket, including events for Macie '
+    },{
+          'question': ' Which type of policy allows you to specify expiration date only ',
+          'optiona': '  Custom policy ',
+          'optionb': '  Canned policy ',
+          'optionc': '  Both  ',
+          'optiond': ' None ',
+          'answer': 'b',
+          'info': ' <a href="https://aws.amazon.com/blogs/developer/serving-private-content-through-amazon-cloudfront-using-signed-cookies/#:~:text=Canned%20policies%20allow%20you%20to,the%20use%20of%20the%20Amazon.">Know more</a> '
+      },{
+            'question': ' In addition to an expiration date, which policies allow you to set resource paths with wildcards, activation time, and IP address/address ranges. ',
+            'optiona': '  Custom policy ',
+            'optionb': '  Canned policy ',
+            'optionc': '  Both  ',
+            'optiond': ' None ',
+            'answer': 'a',
+            'info': ' <a href="https://aws.amazon.com/blogs/developer/serving-private-content-through-amazon-cloudfront-using-signed-cookies/#:~:text=Canned%20policies%20allow%20you%20to,the%20use%20of%20the%20Amazon.">Know more</a> '
+        },{
+
+        'question': '  Shared Responsibility Model for Infrastructure Services , what are customers Responsibility ',
+        'optiona': '  Operating system network and firewall configuration  ',
+        'optionb': '  CloudWatch ',
+        'optionc': '  xray  ',
+        'optiond': ' All ',
+        'answer': 'a',
+        'info': ' If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon Simple Storage Service (Amazon S3) bucket, including events for Macie '
+    },{
+
+    'question': '  you can provision a ________ that you can add to your app to handle sign-up and sign-in workflows',
+    'optiona': '  hosted authentication UI  ',
+    'optionb': '  App client ',
+    'optionc': '  Resource Server  ',
+    'optiond': ' All ',
+    'answer': 'a',
+    'info': ' <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html"> Read more </a> '
+}
 ];
 
 var title = "AWS Security"

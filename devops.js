@@ -9,6 +9,50 @@ var req = [
         'info': 'Both'
     },
     {
+    'question': 'Which of the following is presigned URL ',
+    'optiona': '  Adding a query string value to the request ,  the signature is part of the URL in this case ',
+    'optionb': ' Using the HTTP Authorization header  ',
+    'optionc': ' Both',
+    'optiond': 'None of the Above',
+    'answer': 'a',
+    'info': '<a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Read More </a>'
+  },
+  {
+  'question': 'The signing process helps secure requests in which of the following ways ',
+  'optiona': ' Verify the identity of the requester ',
+  'optionb': ' Protect data in transit  ',
+  'optionc': ' Protect against potential replay attacks',
+  'optiond': 'All of the Above',
+  'answer': 'd',
+  'info': '<a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"> Read More </a>'
+},
+{
+'question': 'Which step is performed before <p>Add the signature to the HTTP request</p> to create a signed request ',
+'optiona': ' Create a canonical request for Signature Version 4 ',
+'optionb': ' Create a string to sign for Signature Version 4  ',
+'optionc': '  Calculate the signature for AWS Signature Version 4',
+'optiond': 'All of the Above',
+'answer': 'd',
+'info': '<a href="https://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html"> Read More </a>'
+},
+    {
+    'question': 'The AWS SDK for Java automatically retries requests, and you can configure the retry settings using the ',
+    'optiona': '  ClientConfiguration  ',
+    'optionb': ' maxErrorRetry  ',
+    'optionc': ' Both',
+    'optiond': 'None of the Above',
+    'answer': 'c',
+    'info': '<a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html"> Read More </a>'
+    },{
+       'question': 'In which deployment method during the deployment process two software versions, new and old, are running on the same fleet, allowing a zerodowntime update  ',
+       'optiona': 'All at Once (In-Place Deployment)',
+       'optionb': 'Rolling Deployment',
+       'optionc': 'All of the above',
+       'optiond': 'None',
+       'answer': 'b',
+       'info': '<a href="https://d1.awsstatic.com/whitepapers/DevOps/practicing-continuous-integration-continuous-delivery-on-AWS.pdf"> Read more </a>'
+   },
+    {
         'question': 'Which service Securely host highly scalable private Git repositories',
         'optiona': 'AWS Code Pipeline',
         'optionb': 'AWS Code Deploy ',
@@ -35,6 +79,44 @@ var req = [
         'answer': 'd',
         'info': ' '
     }
+    ,
+    {
+      'question': ' Which of the following triggers CodeArtifact events ',
+      'optiona': ' Publishing a new package version',
+      'optionb': ' Adding a new asset to an existing package version ',
+      'optionc': ' Copying a package version from one repository to another using copy-package-version',
+      'optiond': 'All',
+      'answer': 'd',
+      'info': ' '
+    }  ,
+      {
+      'question': ' Which of the following actions can be triggered by an event ',
+      'optiona': ' Invoking an AWS Lambda function and starting a pipeline in AWS CodePipeline',
+      'optionb': ' Activating an AWS Step Functions state machine',
+      'optionc': ' Notifying an Amazon SNS topic or an Amazon SQS queue ',
+      'optiond': 'All',
+      'answer': 'd',
+      'info': ' '
+      }
+      ,
+       {
+       'question': ' In CodeArtifact, your software packages are stored in  ',
+       'optiona': ' repositories',
+       'optionb': ' domain',
+       'optionc': ' asset ',
+       'optiond': 'package namespace',
+       'answer': 'a',
+       'info': ' '
+       },
+        {
+        'question': '  In CodeArtifact,  repositories are stored in a   ',
+        'optiona': ' packages',
+        'optionb': ' domain',
+        'optionc': ' asset ',
+        'optiond': 'package namespace',
+        'answer': 'b',
+        'info': 'Your software packages are stored in repositories, and repositories are stored in a domain '
+        }
     ,
     {
         'question': ' How do you create a segment ',
@@ -323,7 +405,79 @@ var req = [
         'optiond': ' None ',
         'answer': 'b',
         'info': '  0.1 runs build in different instance 	'
-    } 
+    },
+    {
+        'question': '_______ is a fully managed artifact repository service that makes it easy for organizations to securely store and share software packages used for application development ',
+        'optiona': 'CodeArtifact  ',
+        'optionb': ' CodeCommit ',
+        'optionc': ' Anyone ',
+        'optiond': ' None ',
+        'answer': 'a',
+        'info': '  CodeArtifact automatically scales when you ingest or publish new packages to your repositories	'
+    },
+    {
+        'question': 'Repositories are aggregated into a higher-level entity known as a',
+        'optiona': 'Package  ',
+        'optionb': ' Asset ',
+        'optionc': ' Domain ',
+        'optiond': ' Package namespace ',
+        'answer': 'c',
+        'info': '  All package assets and metadata are stored in the domain, but they are consumed through repositories	'
+    },
+    {
+        'question': 'is a bundle of software and the metadata that is required to resolve dependencies and install the software',
+        'optiona': 'Package  ',
+        'optionb': ' Asset ',
+        'optionc': ' Domain ',
+        'optiond': ' Package namespace ',
+        'answer': 'a',
+        'info': '  AWS CodeArtifact supports npm, PyPI, and Maven package formats	'
+    },
+    {
+        'question': '  is an individual file stored in CodeArtifact that is associated with a package version, such as an npm  .tgz file or Maven POM and JAR files',
+        'optiona': 'Package  ',
+        'optionb': ' Asset ',
+        'optionc': ' Domain ',
+        'optiond': ' Package namespace ',
+        'answer': 'b',
+        'info': '  A given package asset, such as a Maven JAR file, is stored once per domain, no matter how many repositories it\'s present in	'
+    },
+    {
+        'question': ' Which command in eb cli is used to set repository to codecommit ',
+        'optiona': 'eb codesource codecommit   ',
+        'optionb': ' eb codesource local ',
+        'optionc': ' both ',
+        'optiond': ' none ',
+        'answer': 'a',
+        'info': '  <a href= "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-codesource.html"> Read More </a>	'
+    },
+    {
+        'question': ' How do you configure aws cli credentials for code commit ',
+        'optiona': '.gitconfig  ',
+        'optionb': 'git config --global credential.helper \'!aws codecommit credential-helper $@\' ',
+        'optionc': ' both ',
+        'optiond': ' none ',
+        'answer': 'b',
+        'info': '  <a href= "https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ide-c9.html"> Read More </a>	'
+    },
+    {
+        'question': ' _________  helps developers easily understand the runtime behaviour of their applications, improve performance, and decrease infrastructure costs. ',
+        'optiona': 'Amazon CodeGuru Reviewer  ',
+        'optionb': 'CodeGuru Profiler ',
+        'optionc': ' both ',
+        'optiond': ' none ',
+        'answer': 'b',
+        'info': '  <a href= "https://aws.amazon.com/codeguru/faqs/"> Read More </a>	'
+    },
+    {
+        'question': ' _________  is an automated code review service that identifies critical defects and deviation from coding best practices for Java code. ',
+        'optiona': 'Amazon CodeGuru Reviewer  ',
+        'optionb': 'CodeGuru Profiler ',
+        'optionc': ' both ',
+        'optiond': ' none ',
+        'answer': 'a',
+        'info': '  <a href= "https://aws.amazon.com/codeguru/faqs/"> Read More </a>	'
+    }
 ];
 
-var title = "Devops"
+var title = "Developers Tools"

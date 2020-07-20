@@ -1,24 +1,124 @@
 var req = [
-    {
-        'question': 'Which is the correct statment '
-        , 'optiona': 'Lambda is event driven',
-        'optionb': 'Lambda function cannot be triggered by posting message to SNS and SQS queue',
-        'optionc': 'Lambda function cannot be triggered by adding data to DynamoDB or S3',
-        'optiond': 'Lambda function cannot be triggered by Cloudwatch and Cloud trail or calling diectly from API',
-        'answer': 'a',
-        'info': ' Lambda is serverless '
+  {
+      'question': 'When you invoke or view a function, you can include a _______ to specify a version or alias '
+      , 'optiona': 'Trigger',
+      'optionb': 'Runtime',
+      'optionc': 'Qualifier',
+      'optiond': 'Event',
+      'answer': 'c',
+      'info': ' An alias is a pointer to a version that can be updated to map to a different version, or split traffic between two versions. For example, my-function:BLUE. You can use versions and aliases together to provide a stable interface for clients to invoke your function. '
 
-    }, {
-        'question': ' Which is the correct statment  ',
-        'optiona': 'Lambda function cannot be used for real time data analysis',
-        'optionb': 'Lambda function cannot be called using api gateway',
-        'optionc': 'Lambda function cannot be called using AWS SDK',
+  },{
+      'question': 'Which of the following  adds an on-failure destination to the existing asynchronous invocation configuration for the specified function. '
+      , 'optiona': 'Trigger',
+      'optionb': `aws lambda create-event-source-mapping \
+    --function-name my-function \
+    --batch-size 5 \
+    --event-source-arn arn:aws:sqs:us-west-2:123456789012:mySQSqueue`,
+      'optionc': 'aws lambda update-function-event-invoke-config --function-name error \--destination-config \'{"OnFailure":{"Destination": "arn:aws:sqs:us-east-2:123456789012:destination"}}\' ',
+      'optiond': 'Event',
+      'answer': 'c',
+      'info': '  '
+
+  },{
+        'question': 'A file descriptor is a number that uniquely identifies an open file in a computer\'s operating system .What is the maximum  file descriptors or Execution processes/threads'
+        , 'optiona': '256',
+        'optionb': '512',
+        'optionc': '1024',
         'optiond': 'None',
-        'answer': 'd',
-        'info': 'Lambda is applicable for all of the above'
+        'answer': 'c',
+        'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html"> Read More </a> '
+
+    },{
+          'question': 'The following quotas apply per Region and can be increased via Service Quotas '
+          , 'optiona': 'Concurrent executions 1000',
+          'optionb': 'Function and layer storage 75GB',
+          'optionc': 'Both',
+          'optiond': 'None',
+          'answer': 'c',
+          'info': '  <a href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html"> Read more </a> '
+
+      },{
+            'question': 'What is the maximum size of invocation payload request and response for asynchronous invocation '
+            , 'optiona': '256 KB',
+            'optionb': '1 MB',
+            'optionc': '6 MB',
+            'optiond': 'None',
+            'answer': 'a',
+            'info': '  <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html"> Read more </a> '
+
+        },{
+            'question': 'What is the maximum size of invocation payload request and response for synchronous invocation '
+            , 'optiona': '256 KB',
+            'optionb': '1 MB',
+            'optionc': '6 MB',
+            'optiond': 'None',
+            'answer': 'c',
+            'info': '  <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html"> Read more </a> '
+
+        } ,
+        {
+            'question': ' How to efficiently absorb the invoke overhead across a larger set of records, increasing your throughput ',
+            'optiona': ' increase the batch size',
+            'optionb': '  tell the event source to buffer records for up to 5 minutes by configuring a batch window  ',
+            'optionc': ' Both ',
+            'optiond': ' None',
+            'answer': 'c',
+            'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"> Read More </a>'
+        }, {
+            'question': 'Which of The following limits  cannot be increased. '
+            , 'optiona': 'Function resource-based policy 20KB',
+            'optionb': 'Function layers 5 ',
+            'optionc': 'Function burst concurrency 500 - 3000',
+            'optiond': 'All of the Above',
+            'answer': 'd',
+            'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html"> Read More </a> '
+
+        },{
+        'question': ' How to increase the CPU available to your function  ',
+        'optiona': ' increase the memory size ',
+        'optionb': ' decrease the memory size',
+        'optionc': ' memory does not have any effect in CPU  available to your function',
+        'optiond': 'None',
+        'answer': 'a',
+        'info': '<a href="https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"> Read More </a>'
     },
-    
-   
+    {
+    'question': 'Choose the best practice   ',
+    'optiona': ' if you are writing to an Amazon S3 bucket, instead of hard-coding the bucket name you are writing to, configure the bucket name as an environment variable ',
+    'optionb': ' To have full control of the dependencies your function uses, package all of your dependencies with your deployment package',
+    'optionc': ' Initialize SDK clients and database connections outside of the function handler, and cache static assets locally in the /tmp directory',
+    'optiond': 'All of the Above',
+    'answer': 'd',
+    'info': '<a href="https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"> Read More </a>'
+  },
+  {
+  'question': ' How do you reduce the time it takes Lambda to unpack deployment packages authored in Java   ',
+  'optiona': '  putting all your function’s code in a single jar with a large number of .class files ',
+  'optionb': ' by putting your dependency .jar files in a separate /lib directory',
+  'optionc': ' Both',
+  'optiond': 'None of the Above',
+  'answer': 'b',
+  'info': '<a href="https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"> Read More </a>'
+},
+{
+'question': 'If you are using Amazon Simple Queue Service as an event source  what should we make sure of ',
+'optiona': '  the function\'s expected execution time < Visibility Timeout value on the queue ',
+'optionb': ' the function\'s expected execution time > Visibility Timeout value on the queue  ',
+'optionc': ' Both',
+'optiond': 'None of the Above',
+'answer': 'a',
+'info': '<a href="https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"> Read More </a>'
+},
+{
+'question': 'The AWS SDK for Java automatically retries requests, and you can configure the retry settings using the ',
+'optiona': '  ClientConfiguration  ',
+'optionb': ' maxErrorRetry  ',
+'optionc': ' Both',
+'optiond': 'None of the Above',
+'answer': 'c',
+'info': '<a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html"> Read More </a>'
+},
     {
         'question': ' Which service would you chosse for Coordinate task for image analysis',
         'optiona': 'Lambda',
@@ -120,6 +220,34 @@ var req = [
         'info': '  '
     } ,
 	 {
+        'question': 'What does lambda authorizer returns ',
+        'optiona': ' boolean  ',
+        'optionb': '  token   ',
+        'optionc': ' policy ',
+        'optiond': ' None ',
+        'answer': 'c',
+        'info': ` <p style="white-space: pre-wrap;">{
+  "policyDocument": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Action": "execute-api:Invoke",
+        "Resource": [
+          "arn:aws:execute-api:us-east-2:123456789012:example/prod/*/*"
+        ],
+        "Effect": "Deny"
+      }
+    ]
+  },
+  "context": {
+    "bool": true,
+    "number": 1,
+    "key": "value"
+  },
+  "principalId": "user|a1b2c3d4"
+}</p> `
+    },
+	 {
         'question': 'What is AWS Lambda execution context  ',
         'optiona': ' an AWS Lambda resource that reads from an event source and invokes a Lambda function ',
         'optionb': '  it provisions and manages the resources needed to run your Lambda function  ',
@@ -127,6 +255,49 @@ var req = [
         'optiond': ' provides a collection of Lambda applications that you can deploy in your account with a few clicks ',
         'answer': 'b',
         'info': ' The execution context is a temporary runtime environment that initializes any external dependencies of your Lambda function code, such as database connections or HTTP endpoints '
+    },
+	 {
+        'question': ' Which of the following is true about execution context  ',
+        'optiona': ' AWS Lambda automatically reuses the execution context for subsequent function invocations  ',
+        'optionb': ' additional logic in  code is required to check if a connection exists before creating one ',
+        'optionc': '  both ',
+        'optiond': ' none ',
+        'answer': 'b',
+        'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html"> Read more </a> '
+    },
+    {
+         'question': 'Lambda encrypts environment variables with    ',
+         'optiona': ' AWS Managed CMK  ',
+         'optionb': ' Customer Managed CMK ',
+         'optionc': '  both ',
+         'optiond': ' none ',
+         'answer': 'c',
+         'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"> Read more </a> '
+     },{
+          'question': 'The KMS key that\'s used to encrypt the function\'s environment variables is specified using   ',
+          'optiona': ' MasterArn  ',
+          'optionb': ' KMSKeyArn ',
+          'optionc': '  FunctionArn ',
+          'optiond': ' none ',
+          'answer': 'b',
+          'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_FunctionConfiguration.html"> Read more </a> '
+      },
+     {
+          'question': ' When you use the console encryption helpers, your function needs permission to call the ___________ API operation in its execution role.  ',
+          'optiona': ' kms:CreateGrant, kms:Encrypt  ',
+          'optionb': '   kms:Decrypt ',
+          'optionc': '  kms:ListAliases ',
+          'optiond': ' none ',
+          'answer': 'b',
+          'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"> Read more </a> '
+      }, {
+        'question': ' How to fix cold start issues   ',
+        'optiona': ' turn on Provisioned Concurrency  ',
+        'optionb': '  writing code in python ',
+        'optionc': '  both ',
+        'optiond': ' none ',
+        'answer': 'a',
+        'info': ' <a href="https://aws.amazon.com/blogs/compute/new-for-aws-lambda-predictable-start-up-times-with-provisioned-concurrency/"> Read more </a> '
     },
 	 {
         'question': 'How do you call lambda asynchronously from cli ',
@@ -148,12 +319,12 @@ var req = [
     },
 	 {
         'question': 'What is Rolling deployments for Lambda functions',
-        'optiona': ' Lambda ignores it ',
-        'optionb': '  Lambda runs it again  ',
-        'optionc': '  the system automatically deploys the new version of the function and gradually sends an increasing amount of traffic to the new version ',
+        'optiona': ' Traffic is shifted in two increments. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Lambda function version in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment ',
+        'optionb': '  All traffic is shifted from the original Lambda function to the updated Lambda function version all at once  ',
+        'optionc': '  the system automatically deploys the new version of the function and gradually sends an increasing amount of traffic to the new version',
         'optiond': ' None ',
         'answer': 'c',
-        'info': '  '
+        'info': '  <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-rolling-deployments.html"> Read more </a>'
     },
     {
        'question': 'What is the maximum size of all environment variable ',
@@ -185,12 +356,23 @@ var req = [
  {
     'question': `Which command do you use to add enviroment variables <p>$ aws lambda _____________ --function-name my-function \
     --environment "Variables={BUCKET=my-bucket,KEY=file.txt}" </p> `,
-    'optiona': ' AWS managed CMK ',
+    'optiona': ' update-event-source-mapping ',
     'optionb': ' update-function-configuration  ',
     'optionc': '  Both ',
     'optiond': ' None ',
-    'answer': 'a',
-    'info': ' Each customer master key (CMK) that you create in AWS Key Management Service (KMS) costs $1/month until you delete it, regardless of where the underlying key material was generated by the service, a custom key store, or you imported it '
+    'answer': 'b',
+    'info': '  '
+},
+{
+   'question': `How can you map a function named my-function to a DynamoDB stream that is specified by its Amazon Resource Name (ARN), with a batch size of 500. `,
+   'optiona': ' aws lambda create-event-source-mapping --function-name my-function --batch-size 500 --starting-position LATEST --event-source-arn arn:aws:dynamodb:us-east-2:123456789012:table/my-table/stream/2019-06-10T19:26:16.525 ',
+   'optionb': ` aws lambda update-function-event-invoke-config \
+    --function-name my-function \
+    --destination-config '{"OnFailure":{"Destination": "arn:aws:sqs:us-east-2:123456789012:destination"}}' `,
+   'optionc': '  Both ',
+   'optiond': ' None ',
+   'answer': 'a',
+   'info': '  '
 },
 {
    'question': `  How to share common dependencies accross all lambda function `,
@@ -200,6 +382,78 @@ var req = [
    'optiond': ' None ',
    'answer': 'b',
    'info': ' AWS released Lambda layers, providing a mechanism to externally package dependencies that can be shared across multiple Lambda functions<a href="https://aws.amazon.com/blogs/compute/working-with-aws-lambda-and-lambda-layers-in-aws-sam/">Visit</a> '
+},
+{
+   'question': ` For X-Ray tracing, the IP address and port of the X-Ray daemon are set in which  unreserved Runtime Environment Variable  `,
+   'optiona': ' _X_AMZN_TRACE_ID  ',
+   'optionb': ' AWS_XRAY_DAEMON_ADDRESS  ',
+   'optionc': '   context object ',
+   'optiond': ' None ',
+   'answer': 'b',
+   'info': ' AWS released Lambda layers, providing a mechanism to externally package dependencies that can be shared across multiple Lambda functions<a href="https://aws.amazon.com/blogs/compute/working-with-aws-lambda-and-lambda-layers-in-aws-sam/">Visit</a> '
+},
+{
+   'question': ` What is a prerequisite for creating lambda RDS proxy `,
+   'optiona': ' store your database credentials as a secret in AWS Secrets Manager  ',
+   'optionb': ' create an IAM Policy that allows RDS Proxy to read the secret  ',
+   'optionc': '   both ',
+   'optiond': ' None ',
+   'answer': 'c',
+   'info': ' <a href="https://aws.amazon.com/blogs/compute/using-amazon-rds-proxy-with-aws-lambda/">Visit</a> '
+},
+{
+   'question': ` Throttling is possible after   `,
+   'optiona': ' Burst Limit  ',
+   'optionb': ' Concurrency Limit ',
+   'optionc': '   both ',
+   'optiond': ' None ',
+   'answer': 'a',
+   'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Visit</a> '
+},
+{
+   'question': ` The Lambda runtime needs permission to read the files in your deployment package. How do you resolve errors like EACCES: permission denied    `,
+   'optiona': ' Create an IAM policy and attach to role ',
+   'optionb': ' chmod 755 ',
+   'optionc': '   both ',
+   'optiond': ' None ',
+   'answer': 'b',
+   'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/troubleshooting-deployment.html">Visit</a> '
+},
+{
+   'question': ` If a function becomes stuck in the Pending state for more than six minutes,Which of the the following API operations should be called to unblock it.  `,
+   'optiona': ' UpdateFunctionCode ',
+   'optionb': ' UpdateFunctionConfiguration ',
+   'optionc': '   PublishVersion ',
+   'optiond': ' Any one ',
+   'answer': 'd',
+   'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/troubleshooting-invocation.html">Visit</a> '
+},
+{
+   'question': ` Choose the CLI command which will perform the following , <p>The alias points to version 1 of the function. Version 2 of the function receives 3 percent of the traffic. The remaining 97 percent of traffic is routed to version 1</p> `,
+   'optiona': ` $ aws lambda create-alias --name  routing-alias  --function-name  my-function  --function-version  1  \
+--routing-config  AdditionalVersionWeights={"2"=0.03}  ` ,
+   'optionb': `$ aws lambda update-alias --name  routing-alias  --function-name  my-function  \
+--routing-config  AdditionalVersionWeights={"2"=0.03}`,
+   'optionc': '   Both ',
+   'optiond': ' None ',
+   'answer': 'c',
+   'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">Visit</a> '
+},{
+   'question': ` Which performance metric is used for thr amount of time between when the stream receives the record and when the event source mapping sends the event to the function `,
+   'optiona': ' Duration  ',
+   'optionb': ' IteratorAge  ',
+   'optionc': '   Both  ',
+   'optiond': ' None ',
+   'answer': 'c',
+   'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html">Visit</a> '
+},{
+   'question': ` To throttle a function, set the  to zero`,
+   'optiona': ' reserved concurrency  ',
+   'optionb': ' provisioned concurrency  ',
+   'optionc': '   Both  ',
+   'optiond': ' None ',
+   'answer': 'a',
+   'info': ' <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Visit</a> '
 }
 ];
 
