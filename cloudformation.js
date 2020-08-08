@@ -722,6 +722,15 @@ runas=<runas user>  </p>`
         'optiond': '  63 days ',
         'answer': 'b',
         'info': ' <a href="https://docs.aws.amazon.com/cli/latest/reference/cloudwatch/get-metric-data.html"> Read more </a> '
+    },
+    {
+        'question': ' Can we use Elasticache with CloudFormation ',
+        'optiona': ' Yes , Redis Only ',
+        'optionb': '  Yes , Memcache Only',
+        'optionc': ' Both  ',
+        'optiond': ' None',
+        'answer': 'c',
+        'info': ' <a href="https://aws.amazon.com/elasticache/faqs/"> Read More </a>'
     }
 
 ];

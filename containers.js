@@ -43,6 +43,15 @@ var req = [
     'optiond': 'None of the above',
     'answer': 'b',
     'info': '<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"> Read more </a> '
+},
+{
+   'question': ' Which ECS Launch type allows you to run your containerized applications without the need to provision and manage the backend infrastructure ',
+   'optiona': ' EC2',
+   'optionb': ' Fargate  ',
+   'optionc': 'All of the above',
+   'optiond': 'None of the above',
+   'answer': 'b',
+   'info': '<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html"> Read more </a> '
 }
   ];
   var title = "Containers";

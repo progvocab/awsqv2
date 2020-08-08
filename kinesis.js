@@ -282,6 +282,24 @@ var req = [
         'optiond': ' All of the Above ',
         'answer': 'd',
         'info': ' <a href="https://docs.aws.amazon.com/athena/latest/APIReference/API_DataCatalog.html"> Read More </a> '
+    },
+    {
+        'question': '________is a stand-alone Java software application that offers an easy way to collect and send source records to Kinesis Data Firehose ',
+        'optiona': ' Amazon Kinesis Agent ',
+        'optionb': ' Glue ',
+        'optionc': ' Hive',
+        'optiond': ' All of the Above ',
+        'answer': 'a',
+        'info': ' <a href="https://docs.aws.amazon.com/firehose/latest/dev/writing-with-agents.html"> Read More </a> '
+    },
+    {
+        'question': 'All transformed records from Lambda must contain which of the following parameters, or Kinesis Data Firehose rejects them and treats that as a data transformation failure.',
+        'optiona': ' recordId ',
+        'optionb': ' result (Ok /Dropped/ProcessingFailed ) ',
+        'optionc': ' data',
+        'optiond': ' All of the Above ',
+        'answer': 'a',
+        'info': ' <a href="https://docs.aws.amazon.com/firehose/latest/dev/writing-with-agents.html"> Read More </a> '
     }
 ];
 

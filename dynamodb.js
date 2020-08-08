@@ -318,6 +318,24 @@ var req = [
         'optiond': ' None ',
         'answer': 'a',
         'info': '  <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#WorkingWithItems.AtomicCounters"> Read More </a>'
+    },
+    {
+        'question': 'Minimum throughput of Dynamodb Table ',
+        'optiona': ' 5',
+        'optionb': ' 1',
+        'optionc': ' 2 ',
+        'optiond': ' 3 ',
+        'answer': 'b',
+        'info': '  <a href="https://aws.amazon.com/dynamodb/faqs/"> Read More </a>'
+    },
+    {
+        'question': 'How do you manage throughput capcity automatically',
+        'optiona': ' inbuild scaling',
+        'optionb': ' Auto Scaling Group and Cloudwatch',
+        'optionc': ' both  ',
+        'optiond': ' none ',
+        'answer': 'b',
+        'info': '  <a href="https://aws.amazon.com/dynamodb/faqs/"> Read More </a>'
     }
 ];
 

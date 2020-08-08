@@ -394,6 +394,24 @@ var req = [
         'optiond': ' None ',
         'answer': 'a',
         'info': '<a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html"> Read more </a>  '
+    },
+    {
+        'question': ' _______ specifies who can access one or more deployed API stages and methods—and also how much and how fast they can access them ',
+        'optiona': '  A usage plan ',
+        'optionb': '   Resource Policy   ',
+        'optionc': ' Both ',
+        'optiond': ' None ',
+        'answer': 'a',
+        'info': '<a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html"> Read more </a>  '
+    },
+    {
+        'question': ' The plan uses  to identify API clients and meters access to the associated API stages for each key ',
+        'optiona': ' Lambda Authorizer ',
+        'optionb': ' Cognito Authorizer ',
+        'optionc': ' API keys ',
+        'optiond': ' None ',
+        'answer': 'c',
+        'info': '<a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html"> Read more </a>  '
     }
 ];
 

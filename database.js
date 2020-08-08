@@ -100,6 +100,24 @@ var req = [
    'optiond': 'Amazon Keyspaces',
    'answer': 'c',
    'info': '.'
+},
+{
+   'question': 'How does Redis implement replication ',
+   'optiona': 'With a single shard that contains all of the cluster\'s data in each node—Redis (cluster mode disabled) ',
+   'optionb': 'With data partitioned across up to 90 shards—Redis (cluster mode enabled) ',
+   'optionc': ' Both ',
+   'optiond': 'None',
+   'answer': 'c',
+   'info': '<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Replication.Redis.Groups.html"> Read More </a>'
+},
+{
+   'question': 'Each shard in a replication group has a single read/write primary node and up',
+   'optiona': '5 read-only replica nodes',
+   'optionb': '10 read-only replica nodes',
+   'optionc': ' 15 read-only replica nodes ',
+   'optiond': 'None',
+   'answer': 'a',
+   'info': '<a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Replication.Redis.Groups.html"> Read More </a>'
 }
   ]
   var title = "Database";
