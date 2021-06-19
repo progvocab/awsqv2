@@ -8,17 +8,8 @@ var req = [
       'answer': 'b',
       'info': '   '
 
-  },  {
-      'question': 'Which of the following Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing trail.  '
-      , 'optiona': `aws cloudtrail put-event-selectors --trail-name TrailName --event-selectors '[{"ReadWriteType": "All","IncludeManagementEvents": true,"DataResources": [{"Type":"AWS::S3::Object", "Values": ["arn:aws:s3:::mybucket/prefix","arn:aws:s3:::mybucket2/prefix2"]},{"Type": "AWS::Lambda::Function","Values": ["arn:aws:lambda:us-west-2:999999999999:function:hello-world-python-function"]}]}]'`,
-      'optionb': ' put-insight-selectors --trail-name Name --insight-selectors  selector',
-      'optionc': ' Both ',
-      'optiond': ' None ',
-      'answer': 'b',
-      'info': '   '
-
-  },{
-        'question': 'Starts the recording of AWS API calls and log file delivery for a trail. '
+  } ,{
+        'question': 'Which commnad starts the recording of AWS API calls and log file delivery for a trail. '
         , 'optiona': 'aws cloudtrail start-logging --name Trail1 ',
         'optionb': ' aws cloudtrail validate-logs --trail-arn arn:aws:cloudtrail:us-east-1:123456789012:trail/Trail1 --start-time 20160129T19:00:00Z ',
         'optionc': ' Both',
@@ -27,7 +18,7 @@ var req = [
         'info': '   '
 
     },{
-        'question': 'Looks up management events or CloudTrail Insights events that are captured by CloudTrail. How can you look up events that occurred in a region within the last 90 days '
+        'question': 'Which command looks up management events or CloudTrail Insights events that are captured by CloudTrail. How can you look up events that occurred in a region within the last 90 days '
         , 'optiona': 'aws cloudtrail get-trail --name Trail1 ',
         'optionb': ' aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=ConsoleLogin ',
         'optionc': ' Both ',
